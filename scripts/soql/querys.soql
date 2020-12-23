@@ -1,0 +1,14 @@
+SELECT COUNT(Id), ShippingCountry FROM Account WHERE AnnualRevenue > 10000 GROUP BY ShippingCountry
+
+SELECT Name, (SELECT Name FROM Cast__r) FROM Movie__c
+
+SELECT ShippingCountry, SUM(AnnualRevenue) totalRevenue FROM Account GROUP BY ShippingCountry ROLLUP
+
+SELECT ShippingCountry, COUNT(Id) numberOfAccounts, Status FROM Account GROUP BY ShippingCountry, Status
+
+SELECT ShippingCountry, COUNT(Id) numberOfAccounts, CleanStatus FROM Account GROUP BY Cube(ShippingCountry, CleanStatus)
+
+SELECT ShippingCountry, COUNT(Id) numberOfAccounts, CleanStatus FROM Account GROUP BY ShippingCountry, CleanStatus
+
+SELECT Name FROM Account WHERE Revenue > 10000 ORDER BY Revenue DESC
+
